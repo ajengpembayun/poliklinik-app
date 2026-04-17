@@ -11,18 +11,17 @@ class DaftarPoli extends Model
     protected $fillable = [
         'id_jadwal',
         'id_pasien',
-        'pasien',
         'no_antrian'
     ];
 
     public function pasien()
     {
-        return $this->belongsTo(User::class, 'id_psien');
+        return $this->belongsTo(User::class, 'id_pasien');
     }
 
     public function jadwalPeriksa()
     {
-        return $this->belongsTo(JdwalPeriksa::class, 'id_jadwal');
+        return $this->belongsTo(JadwalPeriksa::class, 'id_jadwal');
     }
 
     public function periksa()

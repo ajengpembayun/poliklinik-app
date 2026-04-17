@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class JadwalPeriksa extends Model
 {
-    protected $table = 'jaswal_periksa';
+    protected $table = 'jadwal_periksa';
 
     protected $fillable = [
         'id_dokter',
@@ -21,8 +21,8 @@ class JadwalPeriksa extends Model
     }
 
     public function daftarPoli()
-        {
-            return $this->hasManny(DaftarPoli::class, 'id_jadwal');
-        }
+    {
+        return $this->hasMany(DaftarPoli::class, 'id_jadwal');
+    }
     
 }

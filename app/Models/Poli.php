@@ -15,6 +15,6 @@ class Poli extends Model
 
     public function  dokters()
     {
-        return $this->hasMany(User::class, 'iid_poli');
+        return $this->hasMany(User::class, 'id_poli');
     }
 }
