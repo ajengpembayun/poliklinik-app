@@ -68,11 +68,31 @@
                             class="w-full focus:outline-none
                                       @error('harga') border-red-500 @enderror" required>
                     </div>
+                {{-- Stok --}}
+                    <div class="mb-8">
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">
+                                Stok <span class="text-red-500">*</span>
+                            </label>
 
-                    @error('harga')
-                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
+                            <input
+                                type="number"
+                                name="stok"
+                                value="{{ old('stok') }}"
+                                min="0"
+                                placeholder="Masukkan stok obat..."
+                                class="w-full px-4 py-2 border-2 rounded-lg
+                                focus:border-primary focus:outline-none
+                                @error('stok') border-red-500 @enderror"
+                                required>
+
+                            @error('stok')
+                                <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        @error('harga')
+                        <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
 
                 {{-- Buttons --}}
                 <div class="flex gap-3">
